@@ -53,6 +53,7 @@ defmodule Kerosene do
       |> exclude(:preload)
       |> exclude(:order_by)
       |> exclude(:select)
+      |> exclude(:group_by)
       |> select([i], count(field(i, ^primary_key), :distinct))
       |> repo.one
     total_pages || 0
